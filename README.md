@@ -8,4 +8,4 @@ Note that it does work in 2.0.0.M5 if you remove the TestPropertySource annotati
 
 So the bug is that maps aren't read correctly from yml files when using TestPropertySource. Properties files don't seem to have this problem, just yaml.
 
-Was intended as a PoC for Activiti config
+I don't think the nesting in this example is important as can construct the same problem around the example at https://stackoverflow.com/questions/24917194/spring-boot-inject-map-from-application-yml
