@@ -8,10 +8,10 @@ Note that it does work in 2.0.0.M5 if you remove the TestPropertySource annotati
 
 So the bug is that maps aren't read correctly from yml files when using TestPropertySource. Properties files don't seem to have this problem, just yaml.
 
-I don't think the nesting in this example is important as can construct the same problem around the example at https://stackoverflow.com/questions/24917194/spring-boot-inject-map-from-application-yml
-
 The error encountered is:
 
 org.springframework.core.convert.ConverterNotFoundException: No converter found capable of converting from type [java.lang.String] to type [prop.ActivitiProperty]
 
 And this happens in all of the boot 2 milestones.
+
+I don't think the nesting in this is example is central to this problem. If you remove the nesting and use TestPropertySource you do get a different problem. For example if you use TestPropertySource in https://github.com/Activiti/activiti-cloud-service-common/tree/d5af91270e9b3db33ae31f7949356fe1db15eaf0/activiti-cloud-services-security-policies then you get no entries returned. Likewise in the example at https://stackoverflow.com/questions/24917194/spring-boot-inject-map-from-application-yml . That might be a separate problem and I'm not sure that's specific to boot 2.
